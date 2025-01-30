@@ -1,0 +1,4 @@
+apiVersion: v2
+name: products-manager-monitoring
+version: 0.1.0
+description: A Helm chart for monitoring with Prometheus and Grafana

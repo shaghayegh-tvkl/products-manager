@@ -1,0 +1,20 @@
+prometheus:
+  enabled: true
+  image: prom/prometheus:latest
+  service:
+    type: ClusterIP
+    port: 9090
+  configMap: prometheus-config
+
+grafana:
+  enabled: true
+  image: grafana/grafana:latest
+  service:
+    type: LoadBalancer
+    port: 3001
+  adminUser: admin
+  adminPassword: admin
+
+grafanaDashboards:
+  enabled: true
+  configMap: grafana-dashboards

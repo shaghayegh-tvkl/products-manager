@@ -1,1 +1,2 @@
 # products-manager
+This app handles basic CRUD operations for managing "products" in a database. The front-end is AI-generated. Deployment is managed on Kubernetes using Helm charts for seamless scaling and availability. Additionally, there is a Docker Compose setup for easy local deployment and testing.

@@ -1,0 +1,21 @@
+apiVersion: v2
+name: products-manager
+version: 0.1.0
+description: An umbrella Helm chart for deploying Products Manager
+
+dependencies:
+  - name: backend
+    repository: file://charts/backend
+    version: 0.1.0
+  - name: frontend
+    repository: file://charts/frontend
+    version: 0.1.0
+  - name: db
+    repository: file://charts/db
+    version: 0.1.0
+  - name: monitoring
+    repository: file://charts/monitoring
+    version: 0.1.0
+  - name: backup
+    repository: file://charts/backup
+    version: 0.1.0

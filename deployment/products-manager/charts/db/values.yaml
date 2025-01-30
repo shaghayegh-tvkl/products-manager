@@ -1,0 +1,15 @@
+image: postgres:15
+
+service:
+  type: ClusterIP
+  port: 5432
+
+environment:
+  POSTGRES_USER: admin
+  POSTGRES_PASSWORD: adminpassword
+  POSTGRES_DB: products_db
+
+persistence:
+  enabled: true
+  size: 5Gi
+  storageClass: "standard"

@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: products-manager-backup
+spec:
+  schedule: "{{ .Values.schedule }}"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: backup
+              image: {{ .Values.image }}
+              command: {{ .Values.command }}
+              volumeMounts: {{- toYaml .Values.volumeMounts | nindent 16 }}
+          restartPolicy: OnFailure
+          volumes: {{- toYaml .Values.volumes | nindent 12 }}

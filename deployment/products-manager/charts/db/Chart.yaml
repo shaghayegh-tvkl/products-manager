@@ -1,0 +1,4 @@
+apiVersion: v2
+name: products-manager-db
+version: 0.1.0
+description: A Helm chart for deploying the database for Products Manager

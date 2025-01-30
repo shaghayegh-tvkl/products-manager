@@ -1,0 +1,13 @@
+schedule: "0 2 * * *"
+image: "amazon/aws-cli"
+command:
+  - "/bin/sh"
+  - "-c"
+  - "aws s3 sync /data s3://products-manager-backup"
+volumeMounts:
+  - mountPath: /data
+    name: backup-data
+volumes:
+  - name: backup-data
+    persistentVolumeClaim:
+      claimName: backup-pvc

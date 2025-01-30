@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: products-manager-backend
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: products-manager-backend
+  template:
+    metadata:
+      labels:
+        app: products-manager-backend
+    spec:
+      containers:
+        - name: backend
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          env:
+            - name: DB_HOST
+              value: {{ .Values.environment.DB_HOST }}
+            - name: DB_PORT
+              value: "{{ .Values.environment.DB_PORT }}"
+            - name: DB_USER
+              value: {{ .Values.environment.DB_USER }}
+            - name: DB_PASSWORD
+              value: {{ .Values.environment.DB_PASSWORD }}
+            - name: DB_NAME
+              value: {{ .Values.environment.DB_NAME }}

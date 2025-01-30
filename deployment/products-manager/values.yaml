@@ -1,0 +1,15 @@
+backend:
+  replicaCount: 2
+
+frontend:
+  replicaCount: 2
+
+db:
+  persistence:
+    enabled: true
+
+monitoring:
+  enabled: true
+
+backup:
+  schedule: "0 2 * * *"

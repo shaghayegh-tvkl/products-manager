@@ -1,0 +1,4 @@
+apiVersion: v2
+name: products-manager-backup
+version: 0.1.0
+description: A Helm chart for creating backups of the Products Manager system
